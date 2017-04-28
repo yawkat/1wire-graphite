@@ -1,0 +1,4 @@
+*.iml
+.idea/
+sensors/
+__pycache__/
