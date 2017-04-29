@@ -17,7 +17,7 @@ def parse_sensor_data(file_name: str) -> Optional[float]:
         raise Exception("Invalid length: %s" % (lines,))
     if not re.fullmatch(hexpair_regex + r" : crc=[0-9a-f]{2} YES", lines[0]):
         raise Exception("First line invalid: %s" % (lines,))
-    temp_str = re.fullmatch(hexpair_regex + r" t=(\d+)", lines[1]).group(1)
+    temp_str = re.fullmatch(hexpair_regex + r" t=(-?\d+)", lines[1]).group(1)
     temp = int(temp_str) / 1000.0
     # todo: negative values
     if temp > 80:
