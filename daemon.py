@@ -36,7 +36,9 @@ while True:
     for f in os.listdir(sensor_dir):
         # noinspection PyBroadException
         try:
-            collected_data[f] = parse_sensor_data(os.path.join(sensor_dir, f))
+            data = parse_sensor_data(os.path.join(sensor_dir, f))
+            if data is not None:
+                collected_data[f] = data
         except:
             traceback.print_exc()
     if len(collected_data) > 0:
