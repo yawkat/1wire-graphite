@@ -25,7 +25,7 @@ def parse_sensor_data(file_name: str) -> Optional[float]:
     return temp
 
 
-graphitesend.init(graphite_server="192.168.1.3", prefix="1wire")
+graphitesend.init(graphite_server="monitoring.local.yawk.at", prefix="1wire")
 
 sensor_dir = "sensors"
 
